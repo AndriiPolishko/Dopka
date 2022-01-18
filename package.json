@@ -12,7 +12,8 @@
     "stylelint:fix": "stylelint \"**/*.css\" --fix --ignore-path .gitignore",
     "eslint:fix": "eslint . --fix",
     "eslint:check": "eslint . --ignore-path .gitignore",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "npm run eslint:check && npm run stylelint:check && npm run format"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
