@@ -8,7 +8,7 @@
     "start": "sirv public --no-clear",
     "format:fix": "prettier --write .",
     "format": "prettier --check .",
-    "stylelint": "stylelint \"**/*.css\" --ignore-path .gitignore",
+    "stylelint:check": "stylelint \"**/*.css\" --ignore-path .gitignore",
     "stylelint:fix": "stylelint \"**/*.css\" --fix --ignore-path .gitignore",
     "eslint:fix": "eslint . --fix",
     "eslint:check": "eslint . --ignore-path .gitignore",
