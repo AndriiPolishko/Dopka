@@ -21,3 +21,7 @@ jobs:
       - name: Eslint working flow
         run: |
           npm run format
+          npm run eslint:check
+          npm run stylelint:check
+
+# TODO add runs for eslint and stylelint
