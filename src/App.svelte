@@ -5,11 +5,11 @@
     const go = () => {
         console.log(url);
         resetDefaultValues();
-    }
+    };
 
     const resetDefaultValues = () => {
         url = defaultValue;
-    }
+    };
 
 </script>
 
