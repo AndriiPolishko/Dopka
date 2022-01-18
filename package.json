@@ -9,7 +9,8 @@
     "format:fix": "prettier --write .",
     "format": "prettier --check .",
     "eslint:fix": "eslint . --fix",
-    "eslint:check": "eslint . --ignore-path .gitignore"
+    "eslint:check": "eslint . --ignore-path .gitignore",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -23,6 +24,7 @@
   },
   "dependencies": {
     "eslint": "^8.7.0",
+    "husky": "^7.0.4",
     "prettier": "^2.5.1",
     "sirv-cli": "^2.0.0",
     "svelte-simple-modal": "^1.2.0"
