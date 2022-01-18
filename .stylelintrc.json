@@ -1,7 +1,4 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": [
-      "public/build/bundle.css",
-      "public/global.css"
-  ]
+  "ignoreFiles": ["public/build/bundle.css", "public/global.css"]
 }
