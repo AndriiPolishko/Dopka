@@ -7,7 +7,7 @@
        urlObj.url = url;
        console.log(url);
        let responce = await fetch("./api/backend.js",{
-           method:"POST",
+           method:"GET",
            body: JSON.stringify(urlObj)
        });
        resetDefaultValues();
