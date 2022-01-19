@@ -4,6 +4,7 @@
    let urlObj = {};
    let API_URL = "./api/backend";
    let POST_result = "";
+
    const go = async (e) => {
        e.preventDefault();
        urlObj.url = url;
@@ -14,15 +15,10 @@
                headers:{'Content-Type':'application/json'},
                body: JSON.stringify(urlObj)
            });
-           const responseJSON = await response.json();
-           if(!responseJSON.result.success) {
-               POST_result = responseJSON.errors.join(";");
-           }
-           else
-               POST_result = "url was sent";
+           console.log(response);
        }
        catch (e) {
-           console.log("Error occurred :");
+           console.log("Error occurred :" + e);
        }
 
        resetDefaultValues();
