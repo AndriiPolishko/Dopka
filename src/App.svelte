@@ -18,6 +18,7 @@
            console.log(response);
            changedURL = response.json();
            console.log(changedURL);
+           console.log(response.blob());
        }
        catch (e) {
            console.log("Error occurred :" + e);
