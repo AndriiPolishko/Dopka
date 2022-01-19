@@ -9,9 +9,9 @@ const proxy = httpProxy.createProxyServer({
   followRedirects: true,
 });
 
-module.exports = async (req, res) => {
+/*module.exports = async (req, res) => {
   res.json({ a: req.body.url });
-};
+};*/
 
 export const server = http.createServer(function (req, res) {
   proxy.on("proxyRes", function (proxyRes, req, res) {
