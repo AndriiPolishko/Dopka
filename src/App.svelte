@@ -15,7 +15,8 @@
                headers:{'Content-Type':'application/json'},
                body: JSON.stringify(urlObj)
            });
-           changedURL = response.url;
+           console.log(response);
+           changedURL = response.json();
            console.log(changedURL);
        }
        catch (e) {
