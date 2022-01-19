@@ -3,7 +3,7 @@
    let url = defaultValue;
    let urlObj = {};
    let API_URL = "./api/backend";
-   let POST_result = "";
+   let changedURL;
 
    const go = async (e) => {
        e.preventDefault();
@@ -15,7 +15,8 @@
                headers:{'Content-Type':'application/json'},
                body: JSON.stringify(urlObj)
            });
-           console.log(response);
+           changedURL = response.url;
+           console.log(changedURL);
        }
        catch (e) {
            console.log("Error occurred :" + e);
