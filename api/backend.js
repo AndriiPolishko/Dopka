@@ -1,6 +1,6 @@
 const http = require("http");
 const httpProxy = require("http-proxy");
-
+const origin = "https://macao20.com";
 // Create a proxy server with custom application logic
 const proxy = httpProxy.createProxyServer({
   changeOrigin: true,
