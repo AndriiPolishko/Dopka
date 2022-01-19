@@ -11,6 +11,7 @@
        try {
            let response = await fetch(API_URL,{
                method:"POST",
+               headers:{'Content-Type':'application/json'},
                body: JSON.stringify(urlObj)
            });
            const responseJSON = await response.json();

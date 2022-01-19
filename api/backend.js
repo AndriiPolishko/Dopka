@@ -16,6 +16,13 @@ const server = http.createServer(function (req, res) {
     proxyRes.headers["x-proxy"] = "http-proxy";
   });
   proxy.web(req, res, { target: `${origin}` });
+  res.json({ a: 1 });
 });
 
-module.exports = async (req, res) => {};
+/*
+const server = http.createServer(function (req, res) {
+  const result = req.body
+  return res.json({});
+}
+);
+*/
