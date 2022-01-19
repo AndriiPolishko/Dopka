@@ -1,11 +1,18 @@
 <script>
-    let defaultValue = "";
-    let url = defaultValue;
-
-    const go = () => {
-        console.log(url);
-        resetDefaultValues();
+   let defaultValue = "";
+   let url = defaultValue;
+   let urlObj = {};
+   const go = async (e) => {
+       e.preventDefault();
+       urlObj.url = url;
+       console.log(url);
+       let responce = await fetch("./api/backend.js",{
+           method:"POST",
+           body: JSON.stringify(urlObj)
+       });
+       resetDefaultValues();
     };
+
 
     const resetDefaultValues = () => {
         url = defaultValue;
@@ -16,8 +23,10 @@
 <main>
     <div class="main-div text-component">
         <h1>HTTP Web Proxy</h1>
-        <input placeholder="Enter url" bind:value={url} class="input-field text-component">
-        <button on:click={go} class="button-style text-component">Go</button>
+        <form action="./api/backend.js">
+            <input placeholder="Enter url" bind:value={url} class="input-field text-component">
+            <button on:click={go} class="button-style text-component">Go</button>
+        </form>
     </div>
 </main>
 
