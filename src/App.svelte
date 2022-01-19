@@ -2,14 +2,28 @@
    let defaultValue = "";
    let url = defaultValue;
    let urlObj = {};
+   let API_URL = "./api/backend";
+   let POST_result = "";
    const go = async (e) => {
        e.preventDefault();
        urlObj.url = url;
        console.log(url);
-       let responce = await fetch("./api/backend.js",{
-           method:"GET",
-           body: JSON.stringify(urlObj)
-       });
+       try {
+           let response = await fetch(API_URL,{
+               method:"POST",
+               body: JSON.stringify(urlObj)
+           });
+           const responseJSON = await response.json();
+           if(!responseJSON.result.success) {
+               POST_result = responseJSON.errors.join(";");
+           }
+           else
+               POST_result = "url was sent";
+       }
+       catch (e) {
+           console.log("Error occurred :");
+       }
+
        resetDefaultValues();
     };
 

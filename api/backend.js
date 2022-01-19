@@ -17,3 +17,5 @@ const server = http.createServer(function (req, res) {
   });
   proxy.web(req, res, { target: `${origin}` });
 });
+
+module.exports = async (req, res) => {};
