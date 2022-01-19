@@ -60,11 +60,6 @@
         text-align: center;
     }
 
-    .text-component {
-        font-size: 25px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-
     .button-style {
         border-radius: 2px;
         height: 38px;
