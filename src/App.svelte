@@ -16,14 +16,10 @@
            }).then(response =>
                response.json())
                ;
-
-           const iframe = document.createElement("iframe");
-           iframe.setAttribute("src",response.ourUrl);
-           document.body.appendChild(iframe);
-           console.log(response.ourUrl);
-       }
-       catch (e) {
-           console.log("Error occurred :" + e);
+        
+        document.getElementById('myIframe').setAttribute("src",response.ourUrl);
+       } catch (e) {
+           console.log("Error occurred: " + e);
        }
 
        resetDefaultValues();
@@ -44,13 +40,19 @@
             <button on:click={go} class="button-style textclassNameonent">Go</button>
         </form>
     </div>
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <iframe id="myIframe" src="" frameborder="0" class="iframe-style"></iframe>
 </main>
 
 <style>
 
+    .iframe-style {
+        width: 100%;
+        height: 800px;
+    }
+
     .main-div {
         text-align: center;
-        padding-top: 10%;
     }
 
     .input-field {
