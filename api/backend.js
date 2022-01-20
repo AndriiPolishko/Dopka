@@ -37,16 +37,14 @@ module.exports = async (req, res) => {
 
   let html;
 
-  await readURL(req.body.url)
+  readURL(req.body.url)
     .then((data) => {
       html = data;
       console.log("Html1 - " + html);
     })
     .catch((err) => console.log(err.message));
 
-  console.log("Html2 - " + html);
-
-  res.json({ a: req.body.url });
+  await res.json({ a: req.body.url });
 };
 // const http = require("http");
 // const httpProxy = require("http-proxy");
