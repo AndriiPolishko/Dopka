@@ -32,9 +32,12 @@
   "dependencies": {
     "basic-auth": "^2.0.1",
     "eslint": "^8.7.0",
+    "html-get": "^2.9.8",
     "http-proxy": "^1.18.1",
+    "https": "^1.0.0",
     "husky": "^7.0.4",
     "prettier": "^2.5.1",
+    "puppeteer": "^13.1.1",
     "sirv-cli": "^2.0.0",
     "stylelint": "^14.2.0",
     "svelte-simple-modal": "^1.2.0"
