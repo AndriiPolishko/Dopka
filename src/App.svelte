@@ -8,7 +8,7 @@
    const go = async (e) => {
        e.preventDefault();
        urlObj.ourUrl = url;
-       try {
+       /*try {
            let response = await fetch(API_URL,{
                method:"POST",
                headers:{'Content-Type':'application/json'},
@@ -17,11 +17,11 @@
                response.json())
                ;
         
-        document.getElementById('myIframe').setAttribute("src",response.ourUrl);
+
        } catch (e) {
            console.log("Error occurred: " + e);
-       }
-
+       }*/
+       document.getElementById('myIframe').setAttribute("src",url);
        resetDefaultValues();
     };
 
