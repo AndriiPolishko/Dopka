@@ -3,7 +3,7 @@
    let url = defaultValue;
    let urlObj = {};
    let API_URL = "./api/backend";
-   let POST_result = "";
+   let changedURL;
 
    const go = async (e) => {
        e.preventDefault();
@@ -16,6 +16,7 @@
                body: JSON.stringify(urlObj)
            });
            console.log(response);
+           console.log(response.blob());
        }
        catch (e) {
            console.log("Error occurred :" + e);
