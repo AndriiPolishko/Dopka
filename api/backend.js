@@ -1,4 +1,4 @@
-let http = require("http");
+/*let http = require("http");
 let httpProxy = require("http-proxy");
 let proxy = httpProxy.createProxyServer({});
 const https = require("https");
@@ -44,30 +44,31 @@ module.exports = async (req, res) => {
     })
     .catch((err) => console.log(err.message));
 
-  await res.json({ a: req.body.url });
+  res.send( typeof req.body.url);
+    //.json({ a: req.body.url });
 };
-// const http = require("http");
-// const httpProxy = require("http-proxy");
-// const origin = "https://macao20.com";
-// // Create a proxy server with custom application logic
-// const proxy = httpProxy.createProxyServer({
-//   changeOrigin: true,
-//   autoRewrite: true,
-//   hostRewrite: true,
-//   followRedirects: true,
-// });
+*/
 
-// /*module.exports = async (req, res) => {
-//   res.json({ a: req.body.url });
-// };*/
+const http = require("http");
+const httpProxy = require("http-proxy");
 
-// export const server = http.createServer(function (req, res) {
-//   proxy.on("proxyRes", function (proxyRes, req, res) {
-//     proxyRes.headers["x-proxy"] = "simple-basic-http-auth-proxy-vercel";
-//   });
-//   proxy.web(req, res, { target: `${origin}` });
-// });
+const proxy = httpProxy.createProxyServer({
+  changeOrigin: true,
+  autoRewrite: true,
+  hostRewrite: true,
+  followRedirects: true,
+});
 
-// const port = process.env.AWS_LAMBDA_RUNTIME_API.split(":")[1];
-// console.log(`simple-basic-http-auth-proxy for Vercel started on port ${port}`);
-// server.listen(port);
+const server = http.createServer((req, res) => {
+  let body = "";
+  req.on("data", function (chunk) {
+    body += chunk;
+  });
+
+  req.on("end", function () {
+    res.writeHead(200, { "Content-Type": "text/html" });
+    res.end(body);
+  });
+});
+
+server.listen(8000);

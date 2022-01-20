@@ -7,16 +7,20 @@
 
    const go = async (e) => {
        e.preventDefault();
-       urlObj.url = url;
-       console.log(url);
+       urlObj.ourUrl = url;
        try {
            let response = await fetch(API_URL,{
                method:"POST",
                headers:{'Content-Type':'application/json'},
                body: JSON.stringify(urlObj)
-           });
-           console.log(response);
-           console.log(response.blob());
+           }).then(response =>
+               response.json())
+               ;
+
+           const iframe = document.createElement("iframe");
+           iframe.setAttribute("src",response.ourUrl);
+           document.body.appendChild(iframe);
+           console.log(response.ourUrl);
        }
        catch (e) {
            console.log("Error occurred :" + e);
