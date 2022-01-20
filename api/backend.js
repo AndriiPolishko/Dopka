@@ -33,7 +33,7 @@ function readURL(url) {
 }
 
 module.exports = async (req, res) => {
-  res.json({ a: req.body.url });
+  // res.json({ a: req.body.url });
 
   let html;
 
@@ -45,6 +45,8 @@ module.exports = async (req, res) => {
     .catch((err) => console.log(err.message));
 
   console.log("Html2 - " + html);
+
+  res.json({ a: req.body.url });
 };
 // const http = require("http");
 // const httpProxy = require("http-proxy");
