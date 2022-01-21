@@ -31,7 +31,9 @@
   },
   "dependencies": {
     "basic-auth": "^2.0.1",
+    "envfile": "^6.17.0",
     "eslint": "^8.7.0",
+    "fs": "^0.0.1-security",
     "html-get": "^2.9.8",
     "http-proxy": "^1.18.1",
     "https": "^1.0.0",

@@ -109,15 +109,14 @@ const proxy = httpProxy.createProxyServer({
   followRedirects: true,
 });
 
-let origin = "https://macao20.com";
+const server = http.createServer(function (req, res) {
+  let origin = "https://www.google.com";
 
-export const server = http.createServer(function (req, res) {
   proxy.on("proxyRes", function (proxyRes, req, res) {
-    proxyRes.headers["x-proxy"] = "simple-basic-http-auth-proxy-vercel";
+    proxyRes.headers["x-proxy"] = "basic-http-proxy-o4xnwnyfe-andriipolishko";
   });
   proxy.web(req, res, { target: `${origin}` });
 });
 
-const port = process.env.AWS_LAMBDA_RUNTIME_API.split(":")[1];
-//const port = 8000;
+const port = 8000;
 server.listen(port);
