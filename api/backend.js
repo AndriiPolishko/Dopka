@@ -113,7 +113,7 @@ const server = http.createServer(function (req, res) {
   let origin = "https://www.google.com";
 
   proxy.on("proxyRes", function (proxyRes, req, res) {
-    proxyRes.headers["x-proxy"] = "basic-http-proxy-o4xnwnyfe-andriipolishko";
+    proxyRes.headers["x-proxy"] = "basic-http-proxy-andriipolishko";
   });
   proxy.web(req, res, { target: `${origin}` });
 });
