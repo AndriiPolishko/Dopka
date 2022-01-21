@@ -9,28 +9,10 @@
         e.preventDefault();
         urlObj.ourUrl = url;
 
-
-        const fs = require('fs') 
-        const envfile = require('envfile')
-        const sourcePath = '.env'
-        console.log(envfile.parseFileSync(sourcePath))
-        let parsedFile = envfile.parseFileSync(sourcePath);
-        parsedFile.ORIGIN = url;
-        fs.writeFileSync('.env', envfile.stringifySync(parsedFile)) 
-        console.log(envfile.stringifySync(parsedFile))
-
-       try {
-           let response = await fetch(API_URL,{
-               method:"POST",
-               headers:{'Content-Type':'application/json'},
-               body: JSON.stringify(urlObj)
-           }).then(response =>
-               response.json());
-       } catch (e) {
-           console.log("Error occurred: " + e);
-       }
        document.getElementById('myIframe').setAttribute("src", urlObj.url);
        resetDefaultValues();
+
+       document.location += 'api/backend';
     };
 
 
