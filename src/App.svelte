@@ -18,7 +18,7 @@
 
     const changeUrl = (url) => {
         return deployUrl + url;
-    }
+    };
 </script>
 
 <main>
