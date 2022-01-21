@@ -11,8 +11,6 @@
 
        document.getElementById('myIframe').setAttribute("src", urlObj.url);
        resetDefaultValues();
-
-       document.location += 'api/backend';
     };
 
 

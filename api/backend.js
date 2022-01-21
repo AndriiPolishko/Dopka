@@ -110,7 +110,7 @@ const proxy = httpProxy.createProxyServer({
 });
 
 const server = http.createServer(function (req, res) {
-  let origin = "https://www.mailcheck.co/";
+  let origin = "https://www.google.com";
 
   proxy.on("proxyRes", function (proxyRes, req, res) {
     proxyRes.headers["x-proxy"] = "basic-http-proxy-o4xnwnyfe-andriipolishko";
