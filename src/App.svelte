@@ -26,13 +26,10 @@
 <script>
 let defaultValue = "";
 let url = defaultValue;
-let urlObj = {};
-// let deployUrl = "https://backend-dopka-git-dev-andriipolishko.vercel.app/";
 let deployUrl = "https://backend-dopka-andriipolishko.vercel.app/";
 
 const go = async (e) => {
   e.preventDefault();
-  urlObj.ourUrl = url;
 
   if (url === "") return;
 

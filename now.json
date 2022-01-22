@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "functions": {
-    "api/backend.js": {
-      "memory": 1024
-    }
-  },
-  "routes": [{ "src": "/api(.*)", "dest": "/api/backend.js" }]
-}
