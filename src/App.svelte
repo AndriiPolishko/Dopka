@@ -30,8 +30,8 @@ let deployUrl = deploy_url;
 
 let iframe;
 
-const go = async () => {
-  if (url === "") return;
+const go = () => {
+  if (!url) return;
 
   iframe.src = changeUrl(url);
 };
