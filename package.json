@@ -41,6 +41,7 @@
     "http-proxy": "^1.18.1",
     "https": "^1.0.0",
     "husky": "^7.0.4",
+    "process": "^0.11.10",
     "puppeteer": "^13.1.1",
     "query-string": "^7.1.0",
     "sirv-cli": "^2.0.0",
