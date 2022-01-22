@@ -28,10 +28,12 @@ let defaultValue = "";
 let url = defaultValue;
 let deployUrl = deploy_url;
 
+let iframe;
+
 const go = async () => {
   if (url === "") return;
 
-  document.getElementById("myIframe").setAttribute("src", changeUrl(url));
+  iframe.src = changeUrl(url);
 };
 
 const changeUrl = (url) => {
@@ -50,5 +52,6 @@ const changeUrl = (url) => {
     <button on:click="{go}" class="button-style textclassNameonent">Go</button>
   </div>
   <!-- svelte-ignore a11y-missing-attribute -->
-  <iframe id="myIframe" src="" frameborder="0" class="iframe-style"></iframe>
+  <iframe bind:this="{iframe}" src="" frameborder="0" class="iframe-style"
+  ></iframe>
 </main>
