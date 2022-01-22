@@ -26,19 +26,12 @@
 <script>
 let defaultValue = "";
 let url = defaultValue;
-let deployUrl = "https://backend-dopka-andriipolishko.vercel.app/";
+let deployUrl = deploy_url;
 
-const go = async (e) => {
-  e.preventDefault();
-
+const go = async () => {
   if (url === "") return;
 
   document.getElementById("myIframe").setAttribute("src", changeUrl(url));
-  resetDefaultValues();
-};
-
-const resetDefaultValues = () => {
-  url = defaultValue;
 };
 
 const changeUrl = (url) => {
